@@ -27,6 +27,7 @@ type AppIntroFooterProps = {
   appIntroScreensArray: Array<any>;
   handleScrollTo: (destination: number) => void;
   handleSignInButton: () => void;
+  testID?: string
 };
 
 /**
@@ -41,6 +42,7 @@ const AppIntroFooter: FC<AppIntroFooterProps> = ({
   appIntroScreensArray,
   handleScrollTo,
   handleSignInButton,
+    testID,
 }) => {
   const { currentPage: pageIndex } = sliderState;
   function handlePress(destination: number): void {
@@ -48,9 +50,9 @@ const AppIntroFooter: FC<AppIntroFooterProps> = ({
     handleScrollTo(destination);
   }
   return (
-    <View style={[styles.container, { width }]}>
+    <View style={[styles.container, { width }]} testID={testID}>
       {pageIndex >= appIntroScreensArray.length - 1 ? (
-        <View style={{ width: width - 20 }}>
+        <View style={{ width: width - 20 }} testID={testID}>
           <Button
             title="Sign In"
             handlePress={() => handleSignInButton()}

@@ -62,10 +62,10 @@ const AppIntroSlider: FC<AppIntroSliderProps> = ({ appIntroScreensArray }) => {
           setSliderPage(event);
         }}
         ref={sliderRef}
-        testID="onBoardingContainer"
+        testID="appIntroSlider"
       >
         {appIntroScreensArray.map((screen, index) => (
-          <AppIntroScreen width={width} screen={screen} key={index} />
+          <AppIntroScreen width={width} screen={screen} key={index} testID={"appIntroScreen"}/>
         ))}
       </ScrollView>
       {/* FOOTER */}
@@ -75,6 +75,7 @@ const AppIntroSlider: FC<AppIntroSliderProps> = ({ appIntroScreensArray }) => {
         appIntroScreensArray={appIntroScreensArray}
         handleScrollTo={handleScrollTo}
         handleSignInButton={handleSignInButton}
+        testID={"appIntroFooter"}
       />
     </SafeAreaView>
   );

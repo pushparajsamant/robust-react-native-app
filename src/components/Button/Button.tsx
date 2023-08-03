@@ -21,7 +21,7 @@ const Button: FC<ButtonProps> = ({ title, handlePress, testID, isLoading }) => {
   return (
     <View style={styles.container}>
       {isLoading ? (
-        <Spinner size={'large'} />
+        <Spinner size={'large'} testID={'spinner'}/>
       ) : (
         <TouchableOpacity
           style={styles.button}

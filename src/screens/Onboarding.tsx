@@ -36,7 +36,7 @@ const appIntroScreensArray: Array<appIntroScreenType> = [
 
 const AppIntro: React.FC<{}> = () => {
   return (
-    <View style={{flex: 1}}>
+    <View style={{flex: 1}} testID={"Onboarding"}>
       <AppIntroSlider appIntroScreensArray={appIntroScreensArray} />
     </View>
   );

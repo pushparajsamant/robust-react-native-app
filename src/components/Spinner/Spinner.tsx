@@ -5,6 +5,7 @@ import {COLORS} from '../../assets';
 interface SpinnerProps {
   size?: number | 'small' | 'large' | undefined;
   color?: 'string' | '#00ff00';
+  testID: string;
 }
 
 /**
@@ -13,11 +14,12 @@ interface SpinnerProps {
  * @param props - {@link CardProps}
  */
 
-const Spinner: FC<SpinnerProps> = ({size, color}) => (
+const Spinner: FC<SpinnerProps> = ({size, color, testID}) => (
   <View style={[styles.container, styles.horizontal]}>
     <ActivityIndicator
       size={size ? size : 'small'}
       color={color ? color : COLORS.primary}
+      testID={testID}
     />
   </View>
 );

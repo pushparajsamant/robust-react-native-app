@@ -7,6 +7,7 @@ import { appIntroScreenType } from '../../screens/Onboarding';
 type AppIntroScreenProps = {
   width: number;
   screen: appIntroScreenType;
+  testID?: string
 };
 
 /**
@@ -15,16 +16,16 @@ type AppIntroScreenProps = {
  * @param props - {@link AppIntroScreenProps}
  */
 
-const AppIntroScreen: FC<AppIntroScreenProps> = ({ width, screen }) => {
+const AppIntroScreen: FC<AppIntroScreenProps> = ({ width, screen, testID }) => {
   return (
-    <View style={[styles.container, { width }]}>
+    <View style={[styles.container, { width }]} testID={testID}>
       {/* HEADER */}
       <View testID="welcomeHeader" style={styles.header}>
         <Text style={styles.headerText}>{screen.title[0]}</Text>
         <Text style={styles.headerText}>{screen.title[1]}</Text>
       </View>
       {/* IMAGE */}
-      <Image source={screen.img} style={styles.imageStyle} />
+      <Image source={screen.img} style={styles.imageStyle} testID={'appIntroImage'}/>
       {/* CONTENT */}
       <View style={styles.wrapper}>
         <Text style={[styles.headerText, styles.content]}>
